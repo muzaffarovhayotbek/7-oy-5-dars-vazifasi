@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { backend } from '../axios'; // Axios instance
+import { backend } from '../axios';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './Login.css';
 
@@ -17,7 +17,7 @@ function Login() {
       return false;
     }
 
-    if (password.length < 8) {
+    if (password.length < 4) {
       alert('Parol kamida 8 ta belgidan iborat bo‘lishi kerak');
       return false;
     }

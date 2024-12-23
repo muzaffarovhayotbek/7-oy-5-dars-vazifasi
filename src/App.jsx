@@ -7,11 +7,9 @@ import MainLayouts from './layouts/MainLayouts';
 import ErrorPage from './pages/ErrorPage';
 import Register from './pages/Register';
 import About from './pages/About';
+import Header from './components/Header';
 
-export const ThemeContext = createContext({
-  theme: 'light',
-  setTheme: () => {},
-});
+export const ThemeContext = createContext();
 
 function PrivateRoute({ isAuth, children }) {
   const navigate = useNavigate();
@@ -20,6 +18,7 @@ function PrivateRoute({ isAuth, children }) {
       navigate('/login');
     }
   }, [isAuth, navigate]);
+
   return isAuth ? children : null;
 }
 
@@ -36,6 +35,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
+      {/* <Header></Header> */}
       <Routes>
         <Route
           index
@@ -55,6 +55,7 @@ function App() {
             </MainLayouts>
           }
         />
+
         <Route
           path="/about"
           element={
@@ -66,7 +67,8 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register></Register>} />
+        <Route path="/register" element={<Register />} />
+
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </ThemeContext.Provider>

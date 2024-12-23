@@ -1,9 +1,8 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-// import './MainLayouts.css';
+import './Header.css';
 import productsLogo from '../assets/products-logo.png';
-
-function MainLayouts({ children }) {
+import { NavLink } from 'react-router-dom';
+function Header() {
   return (
     <div>
       <header className="header">
@@ -27,12 +26,8 @@ function MainLayouts({ children }) {
           </div>
         </div>
       </header>
-      {children}
-      <footer>
-        <h2>footer</h2>
-      </footer>
     </div>
   );
 }
 
-export default MainLayouts;
+export default Header;
