@@ -1,8 +1,12 @@
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  darkMode: 'class', // Enable dark mode via class
   theme: {
-    extend: {},
-    darkMode: 'class',
+    extend: {
+      colors: {
+        // Define dark mode colors
+        background: '#1f1f1f', // Example dark background color
+      },
+    },
   },
   plugins: [],
-};
+}

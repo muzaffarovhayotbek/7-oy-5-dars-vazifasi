@@ -25,6 +25,14 @@ function App() {
   const [theme, setTheme] = useState('light');
   const [token, setToken] = useState(localStorage.getItem('token'));
   const navigate = useNavigate();
+  
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }, [theme]);
 
   useEffect(() => {
     if (!token) {
@@ -53,7 +61,6 @@ function App() {
             </MainLayouts>
           }
         />
-
         <Route
           path="/about"
           element={
@@ -65,8 +72,7 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
-        <Route></Route>
-        <Route path="/register" element={<Register></Register>}></Route>
+        <Route path="/register" element={<Register />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </ThemeContext.Provider>
