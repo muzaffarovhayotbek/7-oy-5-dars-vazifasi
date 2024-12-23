@@ -42,7 +42,7 @@ function Login() {
           localStorage.setItem('user', JSON.stringify(response.data));
           localStorage.setItem('token', response.data.accessToken);
 
-          navigate('/', { state: { token: response.data.accessToken } });
+          navigate('/home', { state: { token: response.data.accessToken } });
         }
       })
       .catch((error) => {

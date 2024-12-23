@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import './MainLayouts.css';
 import productsLogo from '../assets/products-logo.png';
+import './MainLayouts.css';
 
 function MainLayouts({ children }) {
   return (

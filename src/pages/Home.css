@@ -1,0 +1,39 @@
+h3 {
+  font-size: 2rem;
+  margin: 10px 0;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; 
+}
+
+h2 {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 20px;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  display: block;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+button:active {
+  background-color: #1e7e34;
+}

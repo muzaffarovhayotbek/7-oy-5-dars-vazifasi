@@ -5,9 +5,8 @@ import Login from './pages/Login';
 import Products from './pages/Products';
 import MainLayouts from './layouts/MainLayouts';
 import ErrorPage from './pages/ErrorPage';
-import Register from './pages/Register';
 import About from './pages/About';
-import Header from './components/Header';
+import Register from './pages/Register';
 
 export const ThemeContext = createContext();
 
@@ -35,7 +34,6 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      {/* <Header></Header> */}
       <Routes>
         <Route
           index
@@ -67,8 +65,8 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-
+        <Route></Route>
+        <Route path="/register" element={<Register></Register>}></Route>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </ThemeContext.Provider>
