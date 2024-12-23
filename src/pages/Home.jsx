@@ -19,7 +19,7 @@ function Home() {
   return (
     <div className="container">
       <h2>Home page</h2>
-      <h3 cc>{counter}</h3>
+      <h3 className='counter'>{counter}</h3>
       <button onClick={handleIncrement}>increment</button>
       <button onClick={handleDecrement}>decrement</button>
     </div>
