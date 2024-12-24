@@ -17,7 +17,7 @@ function Login() {
       return false;
     }
 
-    if (password.length < 4) {
+    if (password.length < 8) {
       alert('Parol kamida 8 ta belgidan iborat bo‘lishi kerak');
       return false;
     }
@@ -46,11 +46,11 @@ function Login() {
         }
       })
       .catch((error) => {
-        const message = error.response?.data?.message || 'Noma’lum xatolik';
+        const message = error.response?.data?.message || 'Noma`lum xatolik';
         if (error.response?.status === 404 || error.response?.status === 401) {
           alert(message);
         } else {
-          alert('Tizimda xatolik yuz berdi. Qaytadan urinib ko‘ring!');
+          alert('Tizimda xatolik yuz berdi. Qaytadan urinib ko`ring!');
         }
       })
       .finally(() => {
@@ -68,6 +68,7 @@ function Login() {
           onChange={(e) => setUserName(e.target.value)}
           placeholder="Enter username"
           required
+          disabled={loading}
         />
 
         <div className="password-container">
@@ -78,6 +79,7 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter password"
             required
+            disabled={loading}
           />
           <span
             className="show-hide-btn"
@@ -92,7 +94,7 @@ function Login() {
         </button>
 
         <NavLink className="nav-link" to="/register">
-          Registerga o‘tish
+          Registerga o`tish
         </NavLink>
       </form>
     </div>

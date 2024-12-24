@@ -25,8 +25,9 @@ function App() {
   const [theme, setTheme] = useState('light');
   const [token, setToken] = useState(localStorage.getItem('token'));
   const navigate = useNavigate();
-  
+
   useEffect(() => {
+    // Tema o'zgarishini kuzatish
     if (theme === 'dark') {
       document.body.classList.add('dark');
     } else {
@@ -35,7 +36,8 @@ function App() {
   }, [theme]);
 
   useEffect(() => {
-    if (!token) {
+    // Token mavjud bo'lmasa, login sahifasiga yo'naltirish
+    if (!token && window.location.pathname !== '/register') {
       navigate('/login');
     }
   }, [token, navigate]);
